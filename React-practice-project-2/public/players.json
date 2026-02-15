@@ -1,0 +1,122 @@
+[
+  {
+    "player-image": "https://i.ibb.co.com/DDg0hvT4/virat-kohli.webp",
+    "player-name": "Abhishek Sharma",
+    "player-country": "India",
+    "playing-roll": "Opening Batsman",
+    "rating": 92,
+    "batting-style": "Left-hand bat",
+    "bolling-style": "Slow left-arm orthodox",
+    "price": 950000
+  },
+  {
+    "player-name": "Virat Kohli",
+    "player-image": "https://i.ibb.co.com/DDg0hvT4/virat-kohli.webp",
+    "player-country": "India",
+    "playing-roll": "Batsman",
+    "rating": 90,
+    "batting-style": "Right-hand bat",
+    "bolling-style": "Right-arm medium",
+    "price": 920000
+  },
+  {
+    "player-name": "Harry Brook",
+    "player-image": "https://i.ibb.co.com/DDg0hvT4/virat-kohli.webp",
+    "player-country": "England",
+    "playing-roll": "Batsman",
+    "rating": 89,
+    "batting-style": "Right-hand bat",
+    "bolling-style": "Right-arm medium",
+    "price": 880000
+  },
+  {
+    "player-name": "Daryl Mitchell",
+    "player-image": "https://i.ibb.co.com/DDg0hvT4/virat-kohli.webp",
+    "player-country": "New Zealand",
+    "playing-roll": "All-rounder",
+    "rating": 87,
+    "batting-style": "Right-hand bat",
+    "bolling-style": "Right-arm medium",
+    "price": 840000
+  },
+  {
+    "player-name": "Suryakumar Yadav",
+    "player-image": "https://i.ibb.co.com/DDg0hvT4/virat-kohli.webp",
+    "player-country": "India",
+    "playing-roll": "Batsman",
+    "rating": 88,
+    "batting-style": "Right-hand bat",
+    "bolling-style": "Right-arm offbreak",
+    "price": 860000
+  },
+  {
+    "player-name": "Varun Chakaravarthy",
+    "player-image": "https://i.ibb.co.com/DDg0hvT4/virat-kohli.webp",
+    "player-country": "India",
+    "playing-roll": "Bowler",
+    "rating": 91,
+    "batting-style": "Right-hand bat",
+    "bolling-style": "Right-arm mystery spin",
+    "price": 900000
+  },
+  {
+    "player-name": "Phil Salt",
+    "player-image": "https://i.ibb.co.com/DDg0hvT4/virat-kohli.webp",
+    "player-country": "England",
+    "playing-roll": "Wicketkeeper Batsman",
+    "rating": 86,
+    "batting-style": "Right-hand bat",
+    "bolling-style": "N/A",
+    "price": 810000
+  },
+  {
+    "player-name": "Kamindu Mendis",
+    "player-image": "https://i.ibb.co.com/DDg0hvT4/virat-kohli.webp",
+    "player-country": "Sri Lanka",
+    "playing-roll": "Batsman",
+    "rating": 85,
+    "batting-style": "Left-hand bat",
+    "bolling-style": "Ambidextrous offbreak",
+    "price": 790000
+  },
+  {
+    "player-name": "Yashasvi Jaiswal",
+    "player-image": "https://i.ibb.co.com/DDg0hvT4/virat-kohli.webp",
+    "player-country": "India",
+    "playing-roll": "Opening Batsman",
+    "rating": 89,
+    "batting-style": "Left-hand bat",
+    "bolling-style": "Right-arm legbreak",
+    "price": 875000
+  },
+  {
+    "player-name": "Hardik Pandya",
+    "player-image": "https://i.ibb.co.com/DDg0hvT4/virat-kohli.webp",
+    "player-country": "India",
+    "playing-roll": "All-rounder",
+    "rating": 88,
+    "batting-style": "Right-hand bat",
+    "bolling-style": "Right-arm fast-medium",
+    "price": 890000
+  },
+  {
+    "player-name": "Sikandar Raza",
+    "player-image": "https://i.ibb.co.com/DDg0hvT4/virat-kohli.webp",
+    "player-country": "Zimbabwe",
+    "playing-roll": "All-rounder",
+    "rating": 84,
+    "batting-style": "Right-hand bat",
+    "bolling-style": "Right-arm offbreak",
+    "price": 760000
+  },
+  {
+    "player-name": "Jofra Archer",
+    "player-image": "https://i.ibb.co.com/DDg0hvT4/virat-kohli.webp",
+    "player-country": "England",
+    "playing-roll": "Bowler",
+    "rating": 87,
+    "batting-style": "Right-hand bat",
+    "bolling-style": "Right-arm fast",
+    "price": 850000
+  }
+]

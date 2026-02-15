@@ -2,7 +2,16 @@ import './App.css'
 import navImg from './assets/logo.png'
 import coinImg from './assets/coin.png'
 import bannerImg from './assets/banner-main.png'
+import AvailablePlayers from './components/AvailablePlayers/AvailablePlayers'
+import SelectedPlayers from './components/SelectedPlayers/SelectedPlayers'
+import { Suspense } from 'react'
+
+const fetchApi=async()=>{
+  const res=await fetch('/players.json');
+  return res.json();
+}
 function App() {
+  const playerspromise=fetchApi();
 
 
   return (
@@ -42,6 +51,13 @@ function App() {
       
 
      </section>
+
+      {/* banner ending */}
+
+      <Suspense fallback={<span class="loading loading-dots loading-xl"></span>}>
+        <AvailablePlayers playerspromise={playerspromise}></AvailablePlayers>
+      </Suspense>
+      <SelectedPlayers></SelectedPlayers>
 
     </>
   )
