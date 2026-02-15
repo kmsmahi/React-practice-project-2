@@ -4,13 +4,14 @@ import coinImg from './assets/coin.png'
 import bannerImg from './assets/banner-main.png'
 import AvailablePlayers from './components/AvailablePlayers/AvailablePlayers'
 import SelectedPlayers from './components/SelectedPlayers/SelectedPlayers'
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 
 const fetchApi=async()=>{
   const res=await fetch('/players.json');
   return res.json();
 }
 function App() {
+  const [toggle,setToggle]=useState(true);
   const playerspromise=fetchApi();
 
 
@@ -54,10 +55,21 @@ function App() {
 
       {/* banner ending */}
 
-      <Suspense fallback={<span class="loading loading-dots loading-xl"></span>}>
+      <div className='max-w-[1200px] mx-auto flex justify-between items-center mt-10'>
+        <div className='text-2xl font-bold'>Available Players</div>
+        <div className='flex gap-4'>
+          <button onClick={()=>setToggle(true)} className="btn btn-warning">Available</button>
+          <button onClick={()=>setToggle(false)} className="btn btn-secondary">Selected (<span>0</span>)</button>
+        </div>
+      </div>
+
+      {
+        toggle===true?<Suspense fallback={<span class="loading loading-dots loading-xl"></span>}>
         <AvailablePlayers playerspromise={playerspromise}></AvailablePlayers>
-      </Suspense>
-      <SelectedPlayers></SelectedPlayers>
+      </Suspense>:<Suspense><SelectedPlayers></SelectedPlayers></Suspense>
+      }
+
+      
 
     </>
   )
