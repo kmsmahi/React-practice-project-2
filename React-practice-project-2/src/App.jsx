@@ -1,17 +1,18 @@
 import './App.css'
-import navImg from './assets/logo.png'
-import coinImg from './assets/coin.png'
 import bannerImg from './assets/banner-main.png'
 import AvailablePlayers from './components/AvailablePlayers/AvailablePlayers'
 import SelectedPlayers from './components/SelectedPlayers/SelectedPlayers'
 import { Suspense, useState } from 'react'
+import NavBar from './components/navbar/NavBar'
 
 const fetchApi=async()=>{
   const res=await fetch('/players.json');
   return res.json();
 }
 function App() {
+  const [availableBalance,setAvailableBalance]=useState(600000000);
   const [toggle,setToggle]=useState(true);
+  const [purchasedPlayers,setPurchasedPlayers]=useState([]);
   const playerspromise=fetchApi();
 
 
@@ -20,17 +21,7 @@ function App() {
 
     {/* navbar starting */}
       
-      <div className="navbar flex  p-6 bg-gray-800 text-white max-w-[1200px] mx-auto">
-  <div className="flex-1">
-    <a className="text-xl">
-    <img className='w-[60px] h-[60px]'  src={navImg} alt="" /></a>
-  </div>
-  <div className="flex gap-2 items-center">
-    <span className='text-xl font-semibold'>600000000</span>
-    {/* <span className='text-xl font-semibold'>coins</span> */}
-    <img className='w-[20px] h-[20px]' src={coinImg} alt="" />
-  </div>
-</div>
+      <NavBar setAvailableBalance={setAvailableBalance} availableBalance={availableBalance}></NavBar>
 
     {/* navbar ending */}
 
@@ -59,14 +50,14 @@ function App() {
         <div className='text-2xl font-bold'>Available Players</div>
         <div className='flex gap-4'>
           <button onClick={()=>setToggle(true)} className="btn btn-warning">Available</button>
-          <button onClick={()=>setToggle(false)} className="btn btn-secondary">Selected (<span>0</span>)</button>
+          <button onClick={()=>setToggle(false)} className="btn btn-secondary">Selected (<span>{purchasedPlayers.length}</span>)</button>
         </div>
       </div>
 
       {
         toggle===true?<Suspense fallback={<span class="loading loading-dots loading-xl"></span>}>
-        <AvailablePlayers playerspromise={playerspromise}></AvailablePlayers>
-      </Suspense>:<Suspense><SelectedPlayers></SelectedPlayers></Suspense>
+        <AvailablePlayers purchasedPlayers={purchasedPlayers} setPurchasedPlayers={setPurchasedPlayers} availableBalance={availableBalance} setAvailableBalance={setAvailableBalance} playerspromise={playerspromise}></AvailablePlayers>
+      </Suspense>:<Suspense><SelectedPlayers purchasedPlayers={purchasedPlayers}></SelectedPlayers></Suspense>
       }
 
       
