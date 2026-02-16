@@ -1,13 +1,13 @@
 import SelectedCard from "../SelectedCard/SelectedCard";
 
-const SelectedPlayers = ({ purchasedPlayers }) => {
+const SelectedPlayers = ({ purchasedPlayers , removePlayer}) => {
     return (
         
         <div className="max-w-[1200px] mx-auto flex flex-col gap-4 mt-8">
             <h2 className="text-xl font-bold">Selected Players ({purchasedPlayers.length}/6)</h2>
             
             {purchasedPlayers.map((player) => (
-                <SelectedCard 
+                <SelectedCard removePlayer={removePlayer} 
                     key={player['player-name']}
                     player={player}
                 />

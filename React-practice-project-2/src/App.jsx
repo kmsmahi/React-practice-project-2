@@ -4,15 +4,21 @@ import AvailablePlayers from './components/AvailablePlayers/AvailablePlayers'
 import SelectedPlayers from './components/SelectedPlayers/SelectedPlayers'
 import { Suspense, useState } from 'react'
 import NavBar from './components/navbar/NavBar'
-
+ import { ToastContainer, toast } from 'react-toastify';
 const fetchApi=async()=>{
   const res=await fetch('/players.json');
   return res.json();
 }
 function App() {
-  const [availableBalance,setAvailableBalance]=useState(600000000);
+  const [availableBalance,setAvailableBalance]=useState(6000000);
   const [toggle,setToggle]=useState(true);
   const [purchasedPlayers,setPurchasedPlayers]=useState([]);
+
+  const removePlayer=(p)=>{
+      const updatedList=purchasedPlayers.filter(player=>player['player-name']!==p['player-name']);
+      setPurchasedPlayers(updatedList);
+      setAvailableBalance(availableBalance+p['price']);
+  }
   const playerspromise=fetchApi();
 
 
@@ -57,9 +63,9 @@ function App() {
       {
         toggle===true?<Suspense fallback={<span class="loading loading-dots loading-xl"></span>}>
         <AvailablePlayers purchasedPlayers={purchasedPlayers} setPurchasedPlayers={setPurchasedPlayers} availableBalance={availableBalance} setAvailableBalance={setAvailableBalance} playerspromise={playerspromise}></AvailablePlayers>
-      </Suspense>:<Suspense><SelectedPlayers purchasedPlayers={purchasedPlayers}></SelectedPlayers></Suspense>
+      </Suspense>:<Suspense><SelectedPlayers removePlayer={removePlayer}purchasedPlayers={purchasedPlayers}></SelectedPlayers></Suspense>
       }
-
+     <ToastContainer />
       
 
     </>

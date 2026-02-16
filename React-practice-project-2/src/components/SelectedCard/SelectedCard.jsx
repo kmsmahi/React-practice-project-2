@@ -1,7 +1,10 @@
 import React from 'react';
 
-const SelectedCard = ({player}) => {
+const SelectedCard = ({player,removePlayer}) => {
     console.log(player);
+    const handleRemove=()=>{
+        removePlayer(player)
+    }
     return (
         <div className='max-w-[1200px] mx-auto mt-6'>
   <div className="flex items-center justify-between p-4 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
@@ -38,7 +41,7 @@ const SelectedCard = ({player}) => {
         <span className="text-sm font-bold text-secondary">C {player['price']?.toString().slice(0, 2)}M</span>
       </div>
       
-      <button 
+      <button onClick={handleRemove}
         className="btn btn-ghost btn-circle text-error hover:bg-red-50"
         title="Remove Player"
       >
